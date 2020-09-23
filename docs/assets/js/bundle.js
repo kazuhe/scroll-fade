@@ -90,23 +90,10 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sub_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sub.js */ \"./src/js/sub.js\");\n\nObject(_sub_js__WEBPACK_IMPORTED_MODULE_0__[\"hello\"])();\n\nvar hello2 = function hello2() {\n  console.log('poke');\n};\n\nhello2();\n\n//# sourceURL=webpack:///./src/js/main.js?");
-
-/***/ }),
-
-/***/ "./src/js/sub.js":
-/*!***********************!*\
-  !*** ./src/js/sub.js ***!
-  \***********************/
-/*! exports provided: hello */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"hello\", function() { return hello; });\nfunction hello() {\n  console.log('hello watch!');\n}\n\n//# sourceURL=webpack:///./src/js/sub.js?");
+eval("/**\n * スクロールすると画像ファイル名が連番で変わる処理\n * @param {}\n * @return {}\n */\nvar scrollMovie = function scrollMovie() {\n  // 画像の要素を取得する\n  var img = document.querySelector('#scrollIMG');\n  var srcPath = './assets/image/';\n  var currentIMG = 1;\n  var switchAmount = 10; // IMGを切り替えるスクロール量\n\n  var nowPosition = window.pageYOffset;\n  window.addEventListener('scroll', function () {\n    // スクロール量を取得\n    var newPosition = window.pageYOffset; // なんか計算 nowPosition\n\n    if (newPosition - nowPosition > switchAmount) {\n      var fileNumber = ('000' + currentIMG).slice(-3);\n      currentIMG++; // 画像ファイル名を書き換え\n\n      var newSrc = \"\".concat(srcPath, \"image\").concat(fileNumber, \".png\");\n      img.setAttribute('src', newSrc); // 初期化\n\n      nowPosition = newPosition;\n    }\n  });\n}; // 実行\n\n\nscrollMovie();\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ })
 

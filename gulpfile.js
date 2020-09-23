@@ -134,7 +134,7 @@ function sass() {
       .pipe(
         gulp.dest(dest.css),
       )
-      // .pipe(browserSync.reload({ stream: true }))
+      .pipe(browserSync.reload({ stream: true }))
   );
 }
 exports.sass = sass;
@@ -147,6 +147,7 @@ function js() {
   return (
     webpackStream(webpackConfig, webpack)
     .pipe(gulp.dest(dest.js))
+    .pipe(browserSync.reload({ stream: true }))
   );
 }
 exports.js = js;
