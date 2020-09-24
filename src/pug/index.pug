@@ -6,6 +6,10 @@ html(lang="ja")
     title タスクランナー | #{site.name}
     link(rel="stylesheet", href="./assets/css/main.css")
     script(src="./assets/js/bundle.js" defer)
+    - for (var x = 0; x < 300; x++)
+      - var count = x + 1
+      - var name = ("00" + count).slice(-3)
+      link(rel="preload", href="./assets/image/image" + name + ".png" as="image")
   body
 
     #app
