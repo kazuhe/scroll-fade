@@ -1,10 +1,13 @@
 @use './foundation/_define' as define;
 
-#app {
-  height: 5000px;
+img {
+  max-width: 100%;
+  height: auto;
 }
-#scrollIMG {
+
+.fixImage {
   position: fixed;
-  top: 50px;
+  top: 0;
   left: 20px;
+  right: 20px;
 }
